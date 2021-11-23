@@ -28,7 +28,7 @@ public class Generator
             m.datatype = in_d;
             members.add(m);
         }
-        String result = ""+class_name+"\n"+"{"+'\n';
+        String result = "class "+class_name+"\n"+"{"+'\n';
         for(int i=0;i<members.size();i++)
         {
             result+="   private "+members.get(i).datatype+" "+members.get(i).name+";\n";
@@ -39,7 +39,7 @@ public class Generator
             result+='\n';
             result+=getter(members.get(i).datatype,members.get(i).name);
             result+='\n';
-            result+=getter(members.get(i).datatype,members.get(i).name);
+            result+=setter(members.get(i).datatype,members.get(i).name);
         }
         result+='\n';
         result+='}';
